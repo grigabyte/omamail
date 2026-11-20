@@ -1,0 +1,7 @@
+# tests/test_backend_api.py with the address book contract cases
+## against the debug binary built from pr/mailbox-address-books 87e2fe7
+Backend API 10 contract PASS: 51 methods, 203 advertised methods; binary 0.11.3
+## the same contract file against the upstream/main bae8a3b debug binary (expected to fail on the first new case)
+AssertionError [ERR_ASSERTION]: advertised API method: contacts.dav
+    at [eval]:94:49
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

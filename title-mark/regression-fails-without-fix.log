@@ -1,0 +1,18 @@
+# ui/tests/qml/tst_brand_mark.qml from pr/title-mark 768c272, with ui/components/ActionIcon.qml restored to upstream/main bae8a3b; AppTitle.qml kept so the test file loads
+$ QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software qmltestrunner -input ui/tests/qml/tst_brand_mark.qml -import ui/tests/qml/imports
+********* Start testing of qmltestrunner *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.5.0
+PASS   : qmltestrunner::BrandMark::initTestCase()
+FAIL!  : qmltestrunner::BrandMark::test_an_ordinary_icon_draws_no_mark() Compared values are not the same
+   Actual   (): undefined
+   Expected (): null
+   Loc: [~/omamail-prs/wt-title/ui/tests/qml/tst_brand_mark.qml(140)]
+FAIL!  : qmltestrunner::BrandMark::test_every_line_sits_on_a_pixel_and_the_ink_is_centred() 'a brand mark has geometry at 14' returned FALSE. ()
+   Loc: [~/omamail-prs/wt-title/ui/tests/qml/tst_brand_mark.qml(63)]
+PASS   : qmltestrunner::BrandMark::test_the_header_mark_sits_on_the_title_baseline()
+FAIL!  : qmltestrunner::BrandMark::test_the_header_size_mark_draws_crisp_edges_and_no_accent_on_the_frame() '143 blended pixels' returned FALSE. ()
+   Loc: [~/omamail-prs/wt-title/ui/tests/qml/tst_brand_mark.qml(127)]
+PASS   : qmltestrunner::BrandMark::cleanupTestCase()
+Totals: 3 passed, 3 failed, 0 skipped, 0 blacklisted, 7ms
+********* Finished testing of qmltestrunner *********
+exit=3

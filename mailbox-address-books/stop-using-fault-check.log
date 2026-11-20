@@ -1,0 +1,6 @@
+# Fault check for the Stop using regression (tst_contact_book.qml) on pr/mailbox-address-books 87e2fe7
+## 1. With the stop check removed from the refresh callback in ContactBook.callRefresh (the forgetEpoch comparison):
+FAIL!  : qmltestrunner::ContactBook::test_a_refresh_answering_after_stop_using_is_dropped() the late answer does not turn the books back on
+Totals: 8 passed, 1 failed, 0 skipped, 0 blacklisted, 5ms
+## 2. Restored:
+Totals: 9 passed, 0 failed, 0 skipped, 0 blacklisted, 6ms

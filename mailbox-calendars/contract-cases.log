@@ -1,0 +1,12 @@
+# tests/test_backend_api.py with the mailbox-calendar contract cases
+## against the debug binary built from pr/mailbox-calendars dc34429 by make validate
+Backend API 10 contract PASS: 50 methods, 202 advertised methods; binary 0.11.3
+## the same contract file against the upstream/main bae8a3b debug binary (expected to fail on the new cases)
++ actual - expected
+
++ 'calendar_provider_unsupported'
+- 'calendar_invalid_url'
+            ^
+
+    at [eval]:157:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)

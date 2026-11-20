@@ -1,0 +1,25 @@
+# tests/reader_cid_pictures.rs from pr/cid-pictures c6daa69, copied onto upstream/main bae8a3b without the fix
+$ cargo test --locked --features integration-test-credentials --test reader_cid_pictures
+   Compiling omamail v0.11.3 (~/omamail-prs/wt-base)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.15s
+     Running tests/reader_cid_pictures.rs (target/debug/deps/reader_cid_pictures-542512449043e4a7)
+
+running 1 test
+test a_cid_picture_is_drawn_from_the_message_and_never_handed_to_qt ... FAILED
+
+failures:
+
+---- a_cid_picture_is_drawn_from_the_message_and_never_handed_to_qt stdout ----
+
+thread 'a_cid_picture_is_drawn_from_the_message_and_never_handed_to_qt' (2228425) panicked at tests/reader_cid_pictures.rs:131:9:
+Original does not draw the message's own picture: {"children":[{"attrs":[],"children":[{"text":"Here it is:","type":"text"}],"name":"p","selfClosing":false,"type":"element"},{"attrs":[],"children":[{"attrs":[{"name":"src","value":"cid:image001.png@01DB0000.ABCDEF00"},{"name":"alt","value":"screenshot"}],"children":[],"name":"img","selfClosing":false,"type":"element"}],"name":"p","selfClosing":false,"type":"element"}],"type":"root"}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    a_cid_picture_is_drawn_from_the_message_and_never_handed_to_qt
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+error: test failed, to rerun pass `--test reader_cid_pictures`
+exit=101

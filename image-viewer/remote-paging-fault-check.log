@@ -1,0 +1,9 @@
+# Fault checks for the marker rules (ui/tests/qml/tst_image_viewer.qml), run on pr/image-viewer itself (3da4f42)
+## 1. The consent check removed from ImagePopover.present (if (item.kind === "marker" && item.consented !== true) -> if (false)):
+FAIL!  : qmltestrunner::ImageViewer::test_paging_fetches_no_remote_picture_the_reader_did_not_ask_for() paging to the second fetches nothing
+Totals: 15 passed, 1 failed, 0 skipped, 0 blacklisted, 254ms
+## 2. The public-address check removed from ImagePopover.present (markers that are not remote treated like remote ones):
+FAIL!  : qmltestrunner::ImageViewer::test_markers_that_are_not_public_addresses_are_refused_without_a_fetch() 'an unresolved cid: is refused' returned FALSE. ()
+Totals: 15 passed, 1 failed, 0 skipped, 0 blacklisted, 251ms
+## 3. Restored:
+Totals: 16 passed, 0 failed, 0 skipped, 0 blacklisted, 255ms

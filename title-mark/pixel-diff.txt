@@ -1,0 +1,26 @@
+# Pixel difference between before (upstream/main) and after (pr/title-mark) captures, per configuration.
+# Columns: configuration, size, bounding box of all differing pixels, differing pixels in the header corner (mark and name), differing pixels elsewhere.
+dark-compact-1x (640, 700) (16, 20, 37, 36) 242 0
+dark-wide-1x (1100, 700) (16, 18, 819, 200) 288 11 px, x 814-818, y 197-199
+dark-wide-2x (2200, 1400) (32, 36, 74, 70) 987 0
+dark12-compact-1x (640, 700) (14, 17, 32, 32) 206 0
+dark12-wide-1x (1100, 700) (14, 15, 808, 224) 526 9 px, x 804-807, y 221-223
+dark12-wide-2x (2200, 1400) (28, 30, 1615, 447) 1718 13 px, x 1608-1614, y 443-446
+light-compact-1x (640, 700) (16, 20, 37, 36) 242 0
+light-wide-1x (1100, 700) (16, 18, 819, 199) 288 6 px, x 815-818, y 197-198
+light-wide-2x (2200, 1400) (32, 36, 74, 70) 987 0
+light12-compact-1x (640, 700) (14, 17, 32, 32) 206 0
+light12-wide-1x (1100, 700) (14, 15, 808, 224) 526 7 px, x 804-807, y 221-223
+light12-wide-2x (2200, 1400) (28, 30, 1615, 448) 1719 20 px, x 1608-1614, y 443-447
+
+# Noise check: four captures of the same upstream/main tree (light, font 14, 1100x700, scale 1) compared with the first.
+run 2 vs run 1: (814, 197, 819, 200)
+run 3 vs run 1: (814, 197, 819, 200)
+run 4 vs run 1: (815, 197, 819, 199)
+
+# Noise check for the other configurations: six captures each of the same upstream/main tree (1100x700, scale 1) compared with the first.
+dark, font 14: run 2 None, run 3 (814, 197, 819, 200), run 4 (814, 197, 819, 200), run 5 (814, 197, 819, 200), run 6 (814, 197, 819, 200)
+light, font 12: run 2 (804, 221, 808, 224), run 3 (804, 221, 808, 224), run 4 (804, 221, 808, 224), run 5 (804, 221, 808, 224), run 6 None
+dark, font 12: run 2 (804, 221, 808, 224), run 3 (804, 222, 808, 225), run 4 (804, 222, 808, 224), run 5 (804, 222, 808, 224), run 6 (804, 221, 808, 224)
+# In every configuration the differing area is inside the empty-reader logo (OmamailLogo, its own Canvas), which this change does not touch:
+# x 814-819, y 197-200 at font 14 and x 804-808, y 221-225 at font 12 (twice those at scale 2), the same areas that differ between before and after outside the header.

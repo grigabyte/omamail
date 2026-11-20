@@ -1,0 +1,5 @@
+# Fault check for the startup-read regression (tst_contact_book.qml) on pr/mailbox-address-books 87e2fe7: the stop check removed from the read callback in ContactBook.refreshMailbox
+FAIL!  : qmltestrunner::ContactBook::test_a_snapshot_read_answering_after_stop_using_is_dropped() the late read does not turn the books back on
+Totals: 8 passed, 1 failed, 0 skipped, 0 blacklisted, 6ms
+# restored:
+Totals: 9 passed, 0 failed, 0 skipped, 0 blacklisted, 6ms

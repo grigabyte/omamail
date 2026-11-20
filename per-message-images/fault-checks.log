@@ -1,0 +1,14 @@
+# Fault checks on pr/per-message-images 2048135
+## 1. ui/account/MailAccount.qml: the grant survives a message change (line 1299: remoteImagesAllowed = remoteImagesAllowed || Model.showsRemoteImages(...))
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+FAIL!  : qmltestrunner::PrefetchedReader::test_image_policy_is_passed_to_both_native_reads() prefetch/preview never loads sender images
+FAIL!  : qmltestrunner::PrefetchedReader::test_one_message_image_grant_ends_with_that_message() the next message starts blocked
+Totals: 13 passed, 2 failed, 0 skipped, 0 blacklisted, 37ms
+## 2. ui/components/ReaderNotice.qml with the wrap removed: one line that elides, as on upstream/main (the second failure is a knock-on: the failed test leaves the reader at 550 px):
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+FAIL!  : qmltestrunner::ReaderMode::test_blocked_images_offer_this_message_before_always() 'the explanation is shown in full' returned FALSE. ()
+FAIL!  : qmltestrunner::ReaderMode::test_the_reading_column_is_bounded_and_centred() 'a wide panel does not become a wide line of text' returned FALSE. ()
+Totals: 12 passed, 2 failed, 0 skipped, 0 blacklisted, 137ms
+## restored:
+Totals: 15 passed, 0 failed, 0 skipped, 0 blacklisted, 140ms
+Totals: 14 passed, 0 failed, 0 skipped, 0 blacklisted, 137ms
